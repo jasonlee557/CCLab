@@ -44,7 +44,6 @@ a:hover {
     width: 70%;
     position: relative;
     left: 15%;
-    padding: 20px;
 }
 
 .left {
@@ -63,7 +62,20 @@ a:hover {
     clear: both;
 }
 
+#img{
+    width:90%
+}
+
 #footer{
     text-align: center;
     font-size: 9px;
 }
+#one-column{
+    text-align:center;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
