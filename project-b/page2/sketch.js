@@ -27,28 +27,28 @@ function draw() {
     if (keyCode == LEFT_ARROW&&nougat.isPlaying() == false) {
       fill("white");
       noStroke();
-      rect(0, 0, width / 8, height);
+      rect(0, 0, width / 5, height);
       nougat.play();
     }
     //     eat right nougat
     if (keyCode == RIGHT_ARROW && nougat.isPlaying()==false) {
       fill("white");
       noStroke();
-      rect(width / 8, 0, width / 8, height);
+      rect(width / 5, 0, width / 5, height);
       nougat.play();
     }
     //     eat up biscuit
     if (keyCode == UP_ARROW&& biscuit.isPlaying()==false) {
       fill("white");
       noStroke();
-      rect(width / 4, height/3, width / 6, height/3);
+      rect(width / 2, height/2, width / 3, height/5);
       biscuit.play();
     }
     // eat down biscuit
      if (keyCode == DOWN_ARROW&& biscuit.isPlaying()==false) {
       fill("white");
       noStroke();
-      rect(width / 2, 0, width / 6, height);
+      rect(width / 2, height/2+height/6, width / 3, height/5);
       biscuit.play();
     }
     // story sound
