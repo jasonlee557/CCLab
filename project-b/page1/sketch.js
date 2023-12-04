@@ -1,23 +1,50 @@
+
 let carX = 0;
 
+function preload() {
+  taxi = loadSound("assets/charter.m4a");
+  dashing = loadSound("assets/dashing.m4a");
+  story1 = loadSound("assets/story1.mp3");
+}
 function setup() {
-    let canvas = createCanvas(windowWidth, 400);
-    canvas.id("p5-canvas");
-    canvas.parent("p5-canvas-container");
+  let canvas = createCanvas(windowWidth, 400);
+  canvas.id("p5-canvas");
+  canvas.parent("p5-canvas-container");
 }
 
 function draw() {
-  background(220);
-  drawCar(carX, height / 2, 4, "taxi");
+  background("black");
+  drawCar(carX, height / 2, "taxi");
   carX = mouseX;
 
-  if (carX > width + 100) {
-    carX = -100;
+  if (carX > width - 100) {
+    carX = width - 100;
+  }
+  push();
+  for (let i = 0; i < 10; i++) {
+    let rainX = random(width);
+    let rainY = random(height);
+    stroke("white");
+    line(rainX, rainY, rainX, rainY + 20);
+  }
+  pop();
+  if (keyIsPressed == true) {
+    //story
+    if (keyCode == ENTER && story1.isPlaying() == false) {
+      story1.play();
+    }
+    //taxi
+    if ((key == "t" || key == "T") && taxi.isPlaying() == false) {
+      taxi.play();
+    }
+    //dashing
+    if ((key == "d" || key == "D") && dashing.isPlaying() == false) {
+      dashing.play();
+    }
   }
 }
 
-// defining a function
-function drawCar(xPos, yPos, speed, name) {
+function drawCar(xPos, yPos, name) {
   push();
   translate(xPos, yPos);
   scale(3);
@@ -43,19 +70,18 @@ function drawCar(xPos, yPos, speed, name) {
 
   // wheels
   fill(0);
-  drawWheel(-25, 40, speed);
-  drawWheel(25, 40, speed);
-
+  drawWheel(-25, 40);
+  drawWheel(25, 40);
   pop();
+
+  function drawWheel(xPos, yPos) {
+    push();
+    translate(xPos, yPos);
+
+    fill(50);
+    ellipse(0, 0, 35, 32);
+
+    pop();
+  }
 }
 
-function drawWheel(xPos, yPos, speed) {
-  push();
-  translate(xPos, yPos);
-  rotate(radians(frameCount * speed));
-
-  fill(50);
-  ellipse(0, 0, 35, 32);
-
-  pop();
-}
