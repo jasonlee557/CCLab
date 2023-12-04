@@ -10,7 +10,7 @@ function preload() {
   mini = loadSound('assets/minimum.m4a');
 }
 function setup() {
-  let canvas = createCanvas(350, windowHeight);
+  let canvas = createCanvas(355, windowHeight);
   canvas.id("p5-canvas");
   canvas.parent("p5-canvas-container");
   // float on the pic
