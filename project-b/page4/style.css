@@ -9,7 +9,7 @@ html, body {
   
   #p5-canvas-container {
     position: absolute;
-    right: 0px;
+    left: 0px;
     top: 0px;
   }
   
