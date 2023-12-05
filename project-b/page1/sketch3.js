@@ -29,7 +29,7 @@ function draw() {
   //zoom in the user's face
   pg.image(cam, -200, 0);
   //display
-  image(pg, 65, 30, 230, 250);
+  image(pg, 55, 30, 230, 250);
   
    if (keyIsPressed == true) {
     //story

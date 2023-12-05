@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(220, 220, 220);
+  background-color: rgb(236, 249, 193);
 }
 
 canvas {
@@ -10,7 +10,7 @@ canvas {
 }
 
 #p5-canvas-container {
-  position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
 }
@@ -18,7 +18,7 @@ canvas {
 #main-container {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   left: 0px;
   top: 0px;
 }
@@ -51,10 +51,10 @@ canvas {
   text-align: left;
 }
 
-#rose {
-  color: rgb(255, 127, 200);
+#green {
+  color: #006203;
 }
 
-#red {
-  color: rgb(255, 127, 127);
+#green1 {
+  color: #0f9200;
 }
