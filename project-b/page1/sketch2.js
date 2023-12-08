@@ -17,7 +17,7 @@ function setup() {
   pop();
   push();
   scale(0.25);
-  image(cookie, 2*width, 2 * height, cookie.width, cookie.height);
+  image(cookie, 2*width, 2*height, cookie.width, cookie.height);
   pop();
 }
 
@@ -27,28 +27,28 @@ function draw() {
     if (keyCode == LEFT_ARROW&&nougat.isPlaying() == false) {
       fill("white");
       noStroke();
-      rect(0, 0, width / 5, height);
+      rect(0, 0, candy.width*0.25/2, height);
       nougat.play();
     }
     //     eat right nougat
     if (keyCode == RIGHT_ARROW && nougat.isPlaying()==false) {
       fill("white");
       noStroke();
-      rect(width / 5, 0, width / 5, height);
+      rect(candy.width*0.25/2, 0, candy.width*0.25/2, height);
       nougat.play();
     }
     //     eat up biscuit
     if (keyCode == UP_ARROW&& biscuit.isPlaying()==false) {
       fill("white");
       noStroke();
-      rect(width / 2, height/2, width / 3, height/5);
+      rect(width / 2, height/2, width, cookie.height*0.25/2);
       biscuit.play();
     }
     // eat down biscuit
      if (keyCode == DOWN_ARROW&& biscuit.isPlaying()==false) {
       fill("white");
       noStroke();
-      rect(width / 2, height/2+height/6, width / 3, height/5);
+      rect(width / 2, height/2+height/8, width, height);
       biscuit.play();
     }
     // story sound
