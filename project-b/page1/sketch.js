@@ -1,5 +1,6 @@
 
 let carX = 0;
+let check = 0;
 
 function preload() {
   taxi = loadSound("assets/charter.m4a");
@@ -13,13 +14,40 @@ function setup() {
 }
 
 function draw() {
-  background("black");
+  background("black")
+
   drawCar(carX, height / 2, "taxi");
   carX = mouseX;
 
-  if (carX > width - 100) {
-    carX = width - 100;
+  if (mouseX > width - 10) {
+    check = check + 1;
   }
+
+  if (check > 0) {
+    carX = width - 10;
+  }
+
+  //smoke
+  push();
+  translate(width - 100, height / 2);
+  fill(255, 255, 255, 150);
+  noStroke();
+  arc(0, -51, 25, 20, 0, PI);
+  triangle(-12.5, -50, 12.5, -50, 0, random(-300, -150));
+  pop();
+
+  //backery
+  push();
+  fill("#f0d7a7");
+  triangle(width + 100, 0, width - 250, 200, width + 250, 200);
+  fill("#f0d7a7");
+  rect(width - 150, 200, 200, 400);
+  fill("red");
+  textSize(20);
+  text("bakery", width - 100, 300);
+  pop();
+  push();
+
   push();
   for (let i = 0; i < 10; i++) {
     let rainX = random(width);
