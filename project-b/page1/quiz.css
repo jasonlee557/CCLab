@@ -22,7 +22,7 @@ html, body {
   }
   .button2 {
     position: fixed;
-    right: 80%;
+    left: 80%;
     top: 90%;
     display: inline-block;
     font-size: 15px;

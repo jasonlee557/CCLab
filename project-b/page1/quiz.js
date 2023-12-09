@@ -46,6 +46,8 @@ let questions = [
     textSize(20);
     fill(0);
     text(score, 10, 20);
+    fill('red')
+    text('Click the red box to listen', 20,100)
     text(questions[counter], width / 2 - 100, height / 2 - 50);
     push();
     fill("red");
